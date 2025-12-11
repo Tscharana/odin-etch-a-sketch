@@ -38,7 +38,12 @@ const currentDimensions = document.querySelector("#currentDimensions");
 creator.addEventListener("click", (e) => {
     e.preventDefault();
     const dimensions = document.querySelector("#dimensions");
-    createGrid(dimensions.value);
-    currentDimensions.textContent = `Current grid created with ${dimensions.value} dimensions.`;
+    const dimValue = parseInt(dimensions.value);
+    if (dimValue < 100 && dimValue > 0) {
+        createGrid(dimValue);
+        currentDimensions.textContent = `Current grid created with ${dimValue} dimensions.`;
+    } else {
+        currentDimensions.textContent = "Please insert a number between 0 and 100.";
+    }
 })
 
