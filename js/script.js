@@ -26,14 +26,15 @@ container.addEventListener("mouseover", (e) => {
 })
 
 const remover = document.querySelector("#removeGridButton")
+const currentDimensions = document.querySelector("#currentDimensions");
 
 remover.addEventListener("click", (e) => {
     e.preventDefault();
     removeGrid();
+    currentDimensions.textContent = "Current grid removed.";
 })
 
 const creator = document.querySelector("#createGridButton");
-const currentDimensions = document.querySelector("#currentDimensions");
 
 creator.addEventListener("click", (e) => {
     e.preventDefault();
