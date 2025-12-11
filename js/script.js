@@ -33,10 +33,12 @@ remover.addEventListener("click", (e) => {
 })
 
 const creator = document.querySelector("#createGridButton");
+const currentDimensions = document.querySelector("#currentDimensions");
 
 creator.addEventListener("click", (e) => {
     e.preventDefault();
     const dimensions = document.querySelector("#dimensions");
-    removeGrid();
     createGrid(dimensions.value);
+    currentDimensions.textContent = `Current grid created with ${dimensions.value} dimensions.`;
 })
+
