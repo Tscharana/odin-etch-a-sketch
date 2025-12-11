@@ -36,3 +36,4 @@ creator.addEventListener("click", () => {
 remover.addEventListener("click", () => {
     removeGrid();
 })
+

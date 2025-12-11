@@ -8,8 +8,13 @@
     <script src="./js/script.js" defer></script>
 </head>
 <body>
-    <button id="createGridButton">Create new grid</button>
-    <button id="removeGridButton">Remove old grid</button>
+    <form>
+        <label for input>Dimensions:</label>
+        <input id="dimensions" type="number">
+        <button id="submit" type="submit">Submit dimensions</button>
+        <button id="createGridButton">Create new grid</button>
+        <button id="removeGridButton">Remove old grid</button>
+    </form>
     <div id="container"></div>
 </body>
 </html>
