@@ -21,13 +21,20 @@ function removeGrid () {
 
 // Event Listener for painting the cells in random color
 const hoverEffect = document.querySelector("#hoverEffect");
+const randomColor = document.querySelector("#randomColor");
 
 container.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("cell") && hoverEffect.checked) {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        const hoverColor = "rgb("+r+", "+g+", "+b+")";
+        let hoverColor;        
+        if (randomColor.checked) {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            hoverColor = "rgb("+r+", "+g+", "+b+")";
+        } else {
+            hoverColor = "rgb(150, 150, 150)";        
+        }
+
         e.target.style.backgroundColor = `${hoverColor}`;
     }
 })
