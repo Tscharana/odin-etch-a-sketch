@@ -19,12 +19,15 @@ function removeGrid () {
     }
 }
 
-// Event Listener for painting the cells in random color
+// Event Listener for painting the cells in random color && hoverEffect.checked
 const hoverEffect = document.querySelector("#hoverEffect");
 const randomColor = document.querySelector("#randomColor");
+const darkening = document.querySelector("#darkeningEffect");
 
 container.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("cell") && hoverEffect.checked) {
+
+// randomColor.checked
         let hoverColor;        
         if (randomColor.checked) {
             const r = Math.floor(Math.random() * 256);
@@ -33,6 +36,13 @@ container.addEventListener("mouseover", (e) => {
             hoverColor = "rgb("+r+", "+g+", "+b+")";
         } else {
             hoverColor = "rgb(150, 150, 150)";        
+        }
+
+// darkening.checked
+        if (e.target.style.opacity === "" && darkening.checked) {
+            e.target.style.opacity = 0.1;
+        } else if (e.target.style.opacity != 1 && darkening.checked) {
+            e.target.style.opacity = (parseFloat(e.target.style.opacity) + 0.1);
         }
 
         e.target.style.backgroundColor = `${hoverColor}`;
