@@ -3,12 +3,12 @@ const container = document.querySelector("#container");
 function createGrid (dim) {
     removeGrid();
     for (let i = 1; i <= dim ** 2; i++) {
-        const dimpx = 320 / dim;
+        const dimpx = 960 / dim;
         const newCell = document.createElement("div");
         newCell.classList.add("cell");
         newCell.style.width = `${dimpx}px`;
         newCell.style.height = `${dimpx}px`;
-        newCell.style.border = "solid 2px red";
+        newCell.style.border = "solid 2px lightblue";
         container.appendChild(newCell);
     }
 }

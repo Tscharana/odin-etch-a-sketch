@@ -6,8 +6,8 @@
 
 #container {
     border: solid 2px black;
-    width: 324px;
-    height: 324px;
+    width: 964px;
+    height: 964px;
     display: flex;
     flex-wrap: wrap;
 }
