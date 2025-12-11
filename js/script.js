@@ -37,3 +37,9 @@ remover.addEventListener("click", () => {
     removeGrid();
 })
 
+const submitButton = document.querySelector("submit");
+
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const dimensions = document.querySelector("dimensions");
+})
