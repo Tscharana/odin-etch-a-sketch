@@ -1,14 +1,16 @@
 const container = document.querySelector("#container");
 
 function createGrid () {
-    for (i = 1; i <= 256; i++) {
-        const newCell = document.createElement("div");
-        newCell.classList.add("cell");
-        const dimension = "20";
-        newCell.style.width = `${dimension}px`;
-        newCell.style.height = `${dimension}px`;
-        newCell.style.border = "solid 2px red";
-        container.appendChild(newCell);
+    if (!container.firstChild) {
+        for (let i = 1; i <= 256; i++) {
+            const newCell = document.createElement("div");
+            newCell.classList.add("cell");
+            const dimension = "20";
+            newCell.style.width = `${dimension}px`;
+            newCell.style.height = `${dimension}px`;
+            newCell.style.border = "solid 2px red";
+            container.appendChild(newCell);
+        }
     }
 }
 
