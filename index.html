@@ -9,11 +9,15 @@
 </head>
 <body>
     <form>
-        <label for input>Dimensions:</label>
+        <label for="dimensions">Dimensions:</label>
         <input id="dimensions" type="number">
         <div id="currentDimensions"></div>
         <button id="createGridButton" type="submit">Create new grid</button>
         <button id="removeGridButton">Remove old grid</button>
+        <label for="hoverEffect">Color hovered cells</label>
+        <input id="hoverEffect" name="hoverEffect" type="checkbox">
+        <label for="randomColor">Random color</label>
+        <input id="randomColor" name="randomColor" type="checkbox">
     </form>
     <div id="container"></div>
 </body>
