@@ -19,7 +19,7 @@ function removeGrid () {
     }
 }
 
-// Event Listener for painting the cells
+// Event Listener for painting the cells in random color
 container.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("cell")) {
         const r = Math.floor(Math.random() * 256);
@@ -29,7 +29,6 @@ container.addEventListener("mouseover", (e) => {
         e.target.style.backgroundColor = `${randomColor}`;
     }
 })
-
 
 // Remove grid button
 const remover = document.querySelector("#removeGridButton")
@@ -55,4 +54,3 @@ creator.addEventListener("click", (e) => {
         currentDimensions.textContent = "Please insert a number between 0 and 100.";
     }
 })
-
