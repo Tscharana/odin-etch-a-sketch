@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 
-div {
+#container {
     border: solid 2px black;
-    width: 320px;
-    height: 320px;
+    width: 324px;
+    height: 324px;
+    display: flex;
+    flex-wrap: wrap;
 }
