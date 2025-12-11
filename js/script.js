@@ -1,13 +1,13 @@
 const container = document.querySelector("#container");
 
-function createGrid () {
+function createGrid (dim) {
     if (!container.firstChild) {
-        for (let i = 1; i <= 256; i++) {
+        for (let i = 1; i <= dim ** 2; i++) {
+            const dimpx = 320 / dim;
             const newCell = document.createElement("div");
             newCell.classList.add("cell");
-            const dimension = "20";
-            newCell.style.width = `${dimension}px`;
-            newCell.style.height = `${dimension}px`;
+            newCell.style.width = `${dimpx}px`;
+            newCell.style.height = `${dimpx}px`;
             newCell.style.border = "solid 2px red";
             container.appendChild(newCell);
         }
@@ -29,17 +29,21 @@ container.addEventListener("mouseover", (e) => {
 const creator = document.querySelector("#createGridButton");
 const remover = document.querySelector("#removeGridButton");
 
-creator.addEventListener("click", () => {
-    createGrid();
+creator.addEventListener("click", (e) => {
+    e.preventDefault();
+    createGrid(16);
 })
 
-remover.addEventListener("click", () => {
+remover.addEventListener("click", (e) => {
+    e.preventDefault();
     removeGrid();
 })
 
-const submitButton = document.querySelector("submit");
+const submitButton = document.querySelector("#submit");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    const dimensions = document.querySelector("dimensions");
+    const dimensions = document.querySelector("#dimensions");
+    removeGrid();
+    createGrid(dimensions.value);
 })
