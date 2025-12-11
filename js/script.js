@@ -25,22 +25,16 @@ container.addEventListener("mouseover", (e) => {
     }
 })
 
-const creator = document.querySelector("#createGridButton");
-const remover = document.querySelector("#removeGridButton");
-
-creator.addEventListener("click", (e) => {
-    e.preventDefault();
-    createGrid(16);
-})
+const remover = document.querySelector("#removeGridButton")
 
 remover.addEventListener("click", (e) => {
     e.preventDefault();
     removeGrid();
 })
 
-const submitButton = document.querySelector("#submit");
+const creator = document.querySelector("#createGridButton");
 
-submitButton.addEventListener("click", (e) => {
+creator.addEventListener("click", (e) => {
     e.preventDefault();
     const dimensions = document.querySelector("#dimensions");
     removeGrid();
