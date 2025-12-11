@@ -22,9 +22,9 @@ function removeGrid () {
 // Event Listener for painting the cells
 container.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("cell")) {
-        const r = Math.floor(Math.random() * 256) + 1;
-        const g = Math.floor(Math.random() * 256) + 1;
-        const b = Math.floor(Math.random() * 256) + 1;
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
         const randomColor = "rgb("+r+", "+g+", "+b+")";
         e.target.style.backgroundColor = `${randomColor}`;
     }
