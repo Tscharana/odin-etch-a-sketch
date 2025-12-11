@@ -19,12 +19,15 @@ function removeGrid () {
     }
 }
 
+// Event Listener for painting the cells
 container.addEventListener("mouseover", (e) => {
     if (e.target.classList.contains("cell")) {
         e.target.style.backgroundColor = "grey";
     }
 })
 
+
+// Remove grid button
 const remover = document.querySelector("#removeGridButton")
 const currentDimensions = document.querySelector("#currentDimensions");
 
@@ -34,6 +37,7 @@ remover.addEventListener("click", (e) => {
     currentDimensions.textContent = "Current grid removed.";
 })
 
+// Create grid button
 const creator = document.querySelector("#createGridButton");
 
 creator.addEventListener("click", (e) => {
